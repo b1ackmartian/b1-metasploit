@@ -11,7 +11,7 @@ This project sets up a Kali-based container (with Metasploit and PostgreSQL) and
 ./build.sh --image <image:tag>
 ```
 
-> If you skip the --image option, it defaults to b1-metasploit:latest.
+> If you skip the --image option, it defaults to metasploit:lab.
 
 ## Starting the Lab
 
@@ -21,7 +21,7 @@ This project sets up a Kali-based container (with Metasploit and PostgreSQL) and
 ./start_lab.sh --image <image:tag>
 ```
 
-> If you skip the --image option, it defaults to b1-metasploit:latest.
+> If you skip the --image option, it defaults to metasploit:lab.
 
 
 2. This will:
