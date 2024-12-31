@@ -61,13 +61,13 @@ fi
 ########################################
 # Start the DVWA container for testing web vulnerabilities.
 docker run \
-  --network="${NETWORK_NAME}" \      # Connect the DVWA container to the virtual network.
-  -h "${DVWA_HOSTNAME}" \            # Set the hostname of the DVWA container.
-  -d \                               # Run the container in detached mode.
-  --rm \                             # Automatically remove the container when stopped.
-  -p "${DVWA_PORT_MAPPING}" \        # Map the host port to the container port.
-  --name "${DVWA_CONTAINER_NAME}" \  # Name the container for easy identification.
-  "${DVWA_IMAGE}"                    # Specify the image to use.
+  --network="${NETWORK_NAME}" \
+  -h "${DVWA_HOSTNAME}" \
+  -d \
+  --rm \
+  -p "${DVWA_PORT_MAPPING}" \
+  --name "${DVWA_CONTAINER_NAME}" \
+  "${DVWA_IMAGE}"
 
 fancy_echo "Started DVWA on port ${DVWA_PORT_MAPPING} (host:container)."
 
@@ -76,13 +76,13 @@ fancy_echo "Started DVWA on port ${DVWA_PORT_MAPPING} (host:container)."
 ########################################
 # Start the Juice Shop container for testing modern application vulnerabilities.
 docker run \
-  --network="${NETWORK_NAME}" \      # Connect the Juice Shop container to the virtual network.
-  -h "${JUICE_HOSTNAME}" \           # Set the hostname of the Juice Shop container.
-  -d \                               # Run the container in detached mode.
-  --rm \                             # Automatically remove the container when stopped.
-  -p "${JUICE_PORT_MAPPING}" \       # Map the host port to the container port.
-  --name "${JUICE_CONTAINER_NAME}" \ # Name the container for easy identification.
-  "${JUICE_IMAGE}"                   # Specify the image to use.
+  --network="${NETWORK_NAME}" \
+  -h "${JUICE_HOSTNAME}" \
+  -d \
+  --rm \
+  -p "${JUICE_PORT_MAPPING}" \
+  --name "${JUICE_CONTAINER_NAME}" \
+  "${JUICE_IMAGE}"
 
 fancy_echo "Started Juice Shop on port ${JUICE_PORT_MAPPING} (host:container)."
 
@@ -96,14 +96,14 @@ fancy_echo "Started Juice Shop on port ${JUICE_PORT_MAPPING} (host:container)."
 fancy_echo "Starting Kali box (${KALI_IMAGE_TAG}) interactively..."
 
 docker run \
-  --network="${NETWORK_NAME}" \      # Connects the Kali container to the specified virtual network (vnet).
-  -h "${KALI_HOSTNAME}" \            # Sets the hostname of the container to 'attacker'.
-  -it \                              # Runs the container interactively with a terminal.
-  --rm \                             # Ensures the container is automatically removed after it stops.
-  --name "${KALI_CONTAINER_NAME}" \  # Names the container 'kalibox' for easy reference.
-  --cap-add=NET_RAW \                # Grants raw socket access, required for tools like ping, traceroute, and nmap.
-  --cap-add=NET_ADMIN \              # Grants network administrative privileges for advanced configurations.
-  "${KALI_IMAGE_TAG}"                # Specifies the Kali Linux image and tag to use.
+  --network="${NETWORK_NAME}" \
+  -h "${KALI_HOSTNAME}" \
+  -it \
+  --rm \
+  --name "${KALI_CONTAINER_NAME}" \
+  --cap-add=NET_RAW \
+  --cap-add=NET_ADMIN \
+  "${KALI_IMAGE_TAG}"
 
 ########################################
 # Cleanup
