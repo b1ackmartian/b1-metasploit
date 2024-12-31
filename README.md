@@ -8,7 +8,7 @@ This project sets up a Kali-based container (with Metasploit and PostgreSQL) and
 - From the project root (where build.sh is located), run:
 
 ```sh
-./build.sh --image <image:tag>
+./scripts/build.sh --image <image:tag>
 ```
 
 > If you skip the --image option, it defaults to metasploit:lab.
@@ -18,7 +18,7 @@ This project sets up a Kali-based container (with Metasploit and PostgreSQL) and
 1. Run:
 
 ```sh
-./start_lab.sh --image <image:tag>
+./scripts/start_lab.sh --image <image:tag>
 ```
 
 > If you skip the --image option, it defaults to metasploit:lab.
