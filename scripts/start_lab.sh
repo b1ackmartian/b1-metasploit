@@ -111,4 +111,10 @@ docker run \
 # Stop and clean up the target containers to reset the lab environment.
 fancy_echo "Cleaning up target containers..."
 docker stop "${DVWA_CONTAINER_NAME}" "${JUICE_CONTAINER_NAME}" # Stop the DVWA and Juice Shop containers.
-fancy_echo "Target containers cleaned up successfully."
+
+# Remove the virtual network.
+fancy_echo "Removing the virtual network '${NETWORK_NAME}'..."
+docker network rm "${NETWORK_NAME}"
+fancy_echo "Network '${NETWORK_NAME}' removed successfully."
+
+fancy_echo "Target containers and network cleaned up successfully."
