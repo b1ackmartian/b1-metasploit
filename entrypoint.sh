@@ -11,7 +11,7 @@ for i in {1..5}; do
     break
   fi
   echo "Waiting for PostgreSQL..."
-  sleep 2
+  sleep 5
 done
 
 # Initialize Metasploit database
