@@ -1,15 +1,8 @@
 FROM kalilinux/kali-rolling
 
-ENV DEBIAN_FRONTEND=noninteractive
-
 # Update and install minimal packages for Metasploit and PostgreSQL
 RUN apt update && apt -y full-upgrade
-RUN apt -y install \
+RUN DEBIAN_FRONTEND=noninteractive apt -y install \
     kali-linux-headless
 
-# Copy in the entrypoint script and make it executable
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash"]
